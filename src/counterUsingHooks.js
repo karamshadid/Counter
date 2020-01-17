@@ -3,33 +3,29 @@ import React, {Component} from 'react';
 import './App.css';
 
 
-class App extends Component {
- constructor(props) {
-   super(props);
-   this.state = {
-     count : 0
+const App = ()=> {
+const [count, setCount] = useState(0);
 
-   };
- }
- addition = () => {
+
+
+const addition = () => {
    this.setState({
      count: this.state.count + 1
    });
 
  };
- setReset=() => {
+const setReset=() => {
 
    this.setState({count: 0})
  }
-subtraction = () => {
+const subtraction = () => {
   if (this.state.count > 0) {
 
   this.setState({count: this.state.count - 1
   })
 }
-}
+};
 
- render() {
  return (
    <div className='app'>
          <div className={(this.state.count % 2 === 0) ? ((this.state.count % 10 === 0 ) ? "button pink" : "button even" ): "button odd" } onClick={this.addition}>
@@ -44,6 +40,6 @@ subtraction = () => {
    </div>
  );
 }
-}
+
 
 export default App;
